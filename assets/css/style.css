@@ -175,6 +175,36 @@ body {
   height: 105px;
   background: #eaeaea;
   border-left: 1px solid #e1e1e1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.app-currentcontact-details {
+  display: flex;
+  align-items: center;
+}
+
+.app-currentcontact-details img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 0px 15px;
+}
+
+.app-currentcontact-details p {
+  font-size: 1.4rem;
+}
+
+.app-currentcontact-details span {
+  font-size: 1.2rem;
+  color: #636363;
+}
+
+.app-currentcontact-icons i {
+  color: #b1b1b1;
+  font-size: 2rem;
+  margin-right: 30px;
 }
 
 .app-im {
