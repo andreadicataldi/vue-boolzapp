@@ -115,6 +115,33 @@ body {
 .app-search {
   height: 75px;
   background: #eaeaea;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-searchbox {
+  width: 450px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  background: white;
+}
+
+.app-searchbox i {
+  color: #b1b1b1;
+  font-size: 1.5rem;
+  margin-left: 20px;
+}
+
+.app-searchbox input {
+  margin-left: 20px;
+  height: 49px;
+  width: 400px;
+  border: none;
+  outline: none;
+  font-size: 1.3rem;
+  color: #636363;
 }
 
 .app-contacts {
