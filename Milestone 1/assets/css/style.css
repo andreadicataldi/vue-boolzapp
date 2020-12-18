@@ -214,4 +214,23 @@ body {
 .app-message {
   height: 105px;
   background: #f3eeea;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.app-message i {
+  color: #636363;
+  font-size: 2.1rem;
+}
+
+.app-message input {
+  height: 75px;
+  width: 780px;
+  border: none;
+  outline: none;
+  font-size: 1.3rem;
+  color: #636363;
+  padding: 15px;
+  border-radius: 8px;
 }
