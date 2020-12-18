@@ -44,13 +44,13 @@
               </div>
             </div>
             <div class="app-contacts">
-              <div class="app-contact" v-for="name in contacts">
+              <div class="app-contact" v-for="contact in contacts">
                 <img
                   class="app-contact-img"
-                  src="./assets/img/avatar_1.jpg"
+                  :src="('./assets/img/avatar' + contact.avatar + '.jpg')"
                   alt=""
                 />
-                <span class="app-contact-name">{{ name }}</span>
+                <span class="app-contact-name">{{ contact.name }}</span>
               </div>
             </div>
           </div>
