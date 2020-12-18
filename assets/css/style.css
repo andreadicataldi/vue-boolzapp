@@ -147,9 +147,31 @@ body {
 .app-contacts {
   height: 500px;
   background: white;
+  overflow-y: auto;
 }
 
 .app-contact {
+  height: 120px;
+  width: 100%;
+  position: relative;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.app-contact-img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin: 15px 0px 0px 30px;
+}
+
+.app-contact-name {
+  position: absolute;
+  left: 150px;
+  top: 15px;
+  font-size: 1.5rem;
+}
+
+.app-currentcontact {
   height: 105px;
   background: #eaeaea;
   border-left: 1px solid #e1e1e1;
