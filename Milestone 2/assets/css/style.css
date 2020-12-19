@@ -159,6 +159,7 @@ li {
   width: 100%;
   position: relative;
   border-bottom: 1px solid #eaeaea;
+  cursor: pointer;
 }
 
 .app-contact-img {
@@ -214,6 +215,7 @@ li {
 .app-im {
   height: 590px;
   display: flex;
+  overflow-y: auto;
 }
 
 .app-im-messages {
@@ -221,7 +223,6 @@ li {
   display: flex;
   flex-direction: column;
   width: 100%;
-  overflow-y: auto;
 }
 
 .app-im-message {

@@ -44,7 +44,12 @@
               </div>
             </div>
             <div class="app-contacts">
-              <div class="app-contact" v-for="contact in contacts">
+              <div
+                class="app-contact"
+                v-for="(contact, index) in contacts"
+                v-if="contact.visible"
+                @click="setActiveContact(index)"
+              >
                 <img
                   class="app-contact-img"
                   :src="('./assets/img/avatar' + contact.avatar + '.jpg')"
@@ -57,9 +62,11 @@
           <div class="app-main">
             <div class="app-currentcontact">
               <div class="app-currentcontact-details">
-                <img src="./assets/img/avatar_1.jpg" alt="" />
+                <img
+                  :src="`./assets/img/avatar${contacts[activeContact].avatar}.jpg`"
+                />
                 <p>
-                  Michele <br />
+                  {{contacts[activeContact].name}} <br />
                   <span>Ultimo accesso oggi alle</span>
                 </p>
               </div>
@@ -71,39 +78,12 @@
             </div>
             <div class="app-im">
               <ul class="app-im-messages">
-                <li class="app-im-message sent">
-                  Provaaaa<span class="app-im-date">10/01/2020 16:15:22</span>
-                </li>
-                <li class="app-im-message received">
-                  Provaaaaaaaa<span class="app-im-date"
-                    >10/01/2020 16:15:22</span
-                  >
-                </li>
-                <li class="app-im-message sent">
-                  Provaaaaaaaaaaaaaaaa<span class="app-im-date"
-                    >10/01/2020 16:15:22</span
-                  >
-                </li>
-                <li class="app-im-message received">
-                  Provaaaaaaaaaaa<span class="app-im-date"
-                    >10/01/2020 16:15:22</span
-                  >
-                </li>
-                <li class="app-im-message sent">
-                  Provaaaa<span class="app-im-date">10/01/2020 16:15:22</span>
-                </li>
-                <li class="app-im-message received">
-                  Provaaaaaaaa<span class="app-im-date"
-                    >10/01/2020 16:15:22</span
-                  >
-                </li>
-                <li class="app-im-message sent">
-                  Provaaaaaaaaaaaaaaaa<span class="app-im-date"
-                    >10/01/2020 16:15:22</span
-                  >
-                </li>
-                <li class="app-im-message received">
-                  Provaaaaaaaaaaa<span class="app-im-date"
+                <li
+                  class="app-im-message"
+                  v-for="message in contacts[activeContact].messages"
+                  :class="(message.status === 'sent') ? 'sent' : 'received'"
+                >
+                  {{ message.text }}<span class="app-im-date"
                     >10/01/2020 16:15:22</span
                   >
                 </li>
