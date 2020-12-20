@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Boolzapp</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="background">
+        <div class="bg-green"></div>
+        <div class="bg-grey"></div>
+      </div>
+      <div class="app-container">
+        <div class="app-window">
+          <div class="app-sidebar">
+            <div class="app-username">
+              <img src="./assets/img/avatar_io.jpg" alt="" />
+              <span>Nome Utente</span>
+              <i class="fas fa-circle-notch"></i>
+              <i class="fas fa-comment-alt"></i>
+              <i class="fas fa-ellipsis-v"></i>
+            </div>
+            <div class="app-notification">
+              <div class="app-notification-icon">
+                <i class="fas fa-bell-slash"></i>
+              </div>
+              <p>
+                Ricevi notifiche di nuovi messaggi <br />
+                <span>Attiva notifiche desktop</span>
+              </p>
+            </div>
+            <div class="app-search">
+              <div class="app-searchbox">
+                <i class="fas fa-search"></i>
+                <input
+                  type="text"
+                  placeholder="Cerca o inizia una nuova chat"
+                />
+              </div>
+            </div>
+            <div class="app-contacts">
+              <div
+                class="app-contact"
+                v-for="(contact, index) in contacts"
+                v-if="contact.visible"
+                @click="setActiveContact(index)"
+              >
+                <img
+                  class="app-contact-img"
+                  :src="('./assets/img/avatar' + contact.avatar + '.jpg')"
+                  alt=""
+                />
+                <span class="app-contact-name">{{ contact.name }}</span>
+              </div>
+            </div>
+          </div>
+          <div class="app-main">
+            <div class="app-currentcontact">
+              <div class="app-currentcontact-details">
+                <img
+                  :src="`./assets/img/avatar${contacts[activeContact].avatar}.jpg`"
+                />
+                <p>
+                  {{contacts[activeContact].name}} <br />
+                  <span>Ultimo accesso oggi alle</span>
+                </p>
+              </div>
+              <div class="app-currentcontact-icons">
+                <i class="fas fa-search"></i>
+                <i class="fas fa-paperclip"></i>
+                <i class="fas fa-ellipsis-v"></i>
+              </div>
+            </div>
+            <div class="app-im">
+              <ul class="app-im-messages">
+                <li
+                  class="app-im-message"
+                  v-for="message in contacts[activeContact].messages"
+                  :class="(message.status === 'sent') ? 'sent' : 'received'"
+                >
+                  {{ message.text }}<span class="app-im-date"
+                    >10/01/2020 16:15:22</span
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="app-message">
+              <i class="far fa-smile"></i>
+              <input
+                type="text"
+                placeholder="Scrivi un messaggio"
+                v-model="msg"
+              />
+              <i class="fas fa-microphone"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <script>
+      dayjs().format();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>

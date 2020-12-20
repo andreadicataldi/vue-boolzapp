@@ -1,0 +1,281 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+.bg-green {
+  height: 10vh;
+  width: 100vw;
+  background: #0c928d;
+}
+
+.bg-grey {
+  height: 90vh;
+  width: 100vw;
+  background: #d7dbd7;
+}
+
+.app-window {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1425px;
+  height: 800px;
+}
+
+.app-sidebar {
+  background: white;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-main {
+  background-image: url(../img/mine.jpg);
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-username {
+  height: 105px;
+  background: #eaeaea;
+  display: flex;
+  align-items: center;
+}
+
+.app-username img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-left: 15px;
+}
+
+.app-username span {
+  font-size: 1.4rem;
+}
+
+.app-username i {
+  color: #b1b1b1;
+  font-size: 2rem;
+}
+
+.app-username .fa-circle-notch {
+  margin-left: 80px;
+}
+
+.app-username .fa-comment-alt,
+.app-username .fa-ellipsis-v {
+  margin-left: 30px;
+}
+
+.app-notification {
+  height: 120px;
+  background: #8bd3f0;
+  display: flex;
+  align-items: center;
+}
+
+.app-notification-icon {
+  height: 75px;
+  width: 75px;
+  background-color: #f2fbff;
+  border-radius: 50%;
+  position: relative;
+  margin-left: 25px;
+}
+
+.app-notification-icon i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  color: #8bd3f0;
+}
+
+.app-notification p {
+  font-size: 1.4rem;
+  margin-left: 10px;
+}
+
+.app-notification span {
+  font-size: 1.2rem;
+  color: #636363;
+  text-decoration: underline;
+}
+
+.app-search {
+  height: 75px;
+  background: #eaeaea;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-searchbox {
+  width: 450px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  background: white;
+}
+
+.app-searchbox i {
+  color: #b1b1b1;
+  font-size: 1.5rem;
+  margin-left: 20px;
+}
+
+.app-searchbox input {
+  margin-left: 20px;
+  height: 49px;
+  width: 400px;
+  border: none;
+  outline: none;
+  font-size: 1.3rem;
+  color: #636363;
+}
+
+.app-contacts {
+  height: 500px;
+  background: white;
+  overflow-y: auto;
+}
+
+.app-contact {
+  height: 120px;
+  width: 100%;
+  position: relative;
+  border-bottom: 1px solid #eaeaea;
+  cursor: pointer;
+}
+
+.app-contact-img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin: 15px 0px 0px 30px;
+}
+
+.app-contact-name {
+  position: absolute;
+  left: 150px;
+  top: 15px;
+  font-size: 1.5rem;
+}
+
+.app-currentcontact {
+  height: 105px;
+  background: #eaeaea;
+  border-left: 1px solid #e1e1e1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.app-currentcontact-details {
+  display: flex;
+  align-items: center;
+}
+
+.app-currentcontact-details img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 0px 15px;
+}
+
+.app-currentcontact-details p {
+  font-size: 1.4rem;
+}
+
+.app-currentcontact-details span {
+  font-size: 1.2rem;
+  color: #636363;
+}
+
+.app-currentcontact-icons i {
+  color: #b1b1b1;
+  font-size: 2rem;
+  margin-right: 30px;
+}
+
+.app-im {
+  height: 590px;
+  display: flex;
+  overflow-y: auto;
+}
+
+.app-im-messages {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.app-im-message {
+  background: white;
+  height: fit-content;
+  width: fit-content;
+  padding: 20px 15px 30px 15px;
+  border-radius: 10px;
+  position: relative;
+  overflow-wrap: break-word;
+  font-size: 1.2rem;
+  margin-top: 15px;
+}
+
+.received {
+  background: white;
+  margin-left: 80px;
+}
+
+.sent {
+  background: #d5f9ba;
+  align-self: flex-end;
+  margin-right: 80px;
+}
+
+.app-im-date {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  font-size: 11px;
+  color: #b1b1b1;
+}
+
+.app-message {
+  height: 105px;
+  background: #f3eeea;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.app-message i {
+  color: #636363;
+  font-size: 2.1rem;
+}
+
+.app-message input {
+  height: 75px;
+  width: 780px;
+  border: none;
+  outline: none;
+  font-size: 1.3rem;
+  color: #636363;
+  padding: 15px;
+  border-radius: 8px;
+}
