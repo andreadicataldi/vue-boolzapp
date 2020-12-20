@@ -100,8 +100,15 @@ let app = new Vue({
         status: "sent",
       });
       this.msg = "";
+      setTimeout(this.receiveMsg, 1000);
     },
-    receiveMsg() {},
+    receiveMsg() {
+      this.contacts[this.activeContact].messages.push({
+        date: "10/01/2020 15:30:55",
+        text: "Ok.",
+        status: "received",
+      });
+    },
   },
   created() {
     document.addEventListener("keyup", (e) => {
