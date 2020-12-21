@@ -70,10 +70,10 @@
             <div class="app-currentcontact">
               <div class="app-currentcontact-details">
                 <img
-                  :src="`./assets/img/avatar${contacts[activeContact].avatar}.jpg`"
+                  :src="`./assets/img/avatar${filteredContact[activeContact].avatar}.jpg`"
                 />
                 <p>
-                  {{contacts[activeContact].name}} <br />
+                  {{filteredContact[activeContact].name}} <br />
                   <span>Ultimo accesso oggi alle</span>
                 </p>
               </div>
@@ -87,7 +87,7 @@
               <ul class="app-im-messages">
                 <li
                   class="app-im-message"
-                  v-for="message in contacts[activeContact].messages"
+                  v-for="message in filteredContact[activeContact].messages"
                   :class="(message.status === 'sent') ? 'sent' : 'received'"
                 >
                   {{ message.text }} <br />

@@ -95,7 +95,7 @@ let app = new Vue({
       this.activeContact = index;
     },
     sendMsg() {
-      this.contacts[this.activeContact].messages.push({
+      this.filteredContact[this.activeContact].messages.push({
         date: "10/01/2020 15:30:55",
         text: this.msg,
         status: "sent",
@@ -104,7 +104,7 @@ let app = new Vue({
       setTimeout(this.receiveMsg, 1000);
     },
     receiveMsg() {
-      this.contacts[this.activeContact].messages.push({
+      this.filteredContact[this.activeContact].messages.push({
         date: "10/01/2020 15:30:55",
         text: "Ok",
         status: "received",
