@@ -89,14 +89,21 @@ let app = new Vue({
       },
     ],
     activeContact: 0,
+    lastAccessData: "",
   },
   methods: {
+    lastAccess() {
+      const now = dayjs().format("HH:mm:ss");
+      this.lastAccessData = now;
+    },
     setActiveContact(index) {
+      this.lastAccessData = "";
       this.activeContact = index;
     },
     sendMsg() {
+      const now = dayjs().format("DD/MM/YYYY HH:mm:ss");
       this.filteredContact[this.activeContact].messages.push({
-        date: "10/01/2020 15:30:55",
+        date: now,
         text: this.msg,
         status: "sent",
       });
@@ -104,11 +111,14 @@ let app = new Vue({
       setTimeout(this.receiveMsg, 1000);
     },
     receiveMsg() {
+      const now = dayjs().format("DD/MM/YYYY HH:mm:ss");
       this.filteredContact[this.activeContact].messages.push({
-        date: "10/01/2020 15:30:55",
+        date: now,
         text: "Ok",
         status: "received",
       });
+      this.lastAccess();
+      this.contacts[this.activeContact].date = this.lastAccessData;
     },
   },
   computed: {

@@ -7,7 +7,6 @@
       href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
     />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
       rel="stylesheet"
@@ -74,7 +73,10 @@
                 />
                 <p>
                   {{filteredContact[activeContact].name}} <br />
-                  <span>Ultimo accesso oggi alle</span>
+                  <span
+                    >Ultimo accesso alle {{ contacts[activeContact].date
+                    }}</span
+                  >
                 </p>
               </div>
               <div class="app-currentcontact-icons">
@@ -91,7 +93,7 @@
                   :class="(message.status === 'sent') ? 'sent' : 'received'"
                 >
                   {{ message.text }} <br />
-                  <span class="app-im-date">10/01/2020 16:15:22</span>
+                  <span class="app-im-date">{{ message.date }}</span>
                 </li>
               </ul>
             </div>
