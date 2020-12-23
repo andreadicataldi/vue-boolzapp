@@ -92,6 +92,14 @@ let app = new Vue({
     lastAccessData: "",
   },
   methods: {
+    toggleMenu() {
+      var x = document.getElementById("menu");
+      if (x.style.display === "none") {
+        x.style.display = "flex";
+      } else {
+        x.style.display = "none";
+      }
+    },
     lastAccess() {
       const now = dayjs().format("HH:mm:ss");
       this.lastAccessData = now;
@@ -126,15 +134,8 @@ let app = new Vue({
       return this.contacts.filter((contactFilter) => {
         return contactFilter.name
           .toLowerCase()
-          .includes(this.search.toLowerCase());
+          .match(this.search.toLowerCase());
       });
     },
-  },
-  created() {
-    document.addEventListener("keyup", (e) => {
-      if (e.key === "Enter") {
-        this.sendMsg();
-      }
-    });
   },
 });

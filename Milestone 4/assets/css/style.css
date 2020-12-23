@@ -229,7 +229,7 @@ li {
   background: white;
   height: fit-content;
   width: fit-content;
-  padding: 20px 15px 30px 15px;
+  padding: 25px 15px 30px 15px;
   border-radius: 10px;
   position: relative;
   overflow-wrap: break-word;
@@ -263,10 +263,11 @@ li {
 
 .toggle {
   position: absolute;
-  top: 5px;
+  top: 8px;
   right: 8px;
   color: #b1b1b1;
   display: none;
+  cursor: pointer;
 }
 
 .menu {

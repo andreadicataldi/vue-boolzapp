@@ -94,8 +94,10 @@
                 >
                   {{ message.text }} <br />
                   <span class="app-im-date">{{ message.date }}</span>
-                  <span><i class="toggle fas fa-angle-down"></i></span>
-                  <div class="menu">
+                  <span
+                    ><i @click="toggleMenu" class="toggle fas fa-angle-down"></i
+                  ></span>
+                  <div id="menu" class="menu">
                     <span>Message Info</span> <span>Delete message</span>
                   </div>
                 </li>
@@ -104,6 +106,7 @@
             <div class="app-message">
               <i class="far fa-smile"></i>
               <input
+                @keyup.enter="sendMsg"
                 type="text"
                 placeholder="Scrivi un messaggio"
                 v-model="msg"
