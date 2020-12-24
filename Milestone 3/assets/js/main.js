@@ -110,11 +110,4 @@ let app = new Vue({
       });
     },
   },
-  created() {
-    document.addEventListener("keyup", (e) => {
-      if (e.key === "Enter") {
-        this.sendMsg();
-      }
-    });
-  },
 });

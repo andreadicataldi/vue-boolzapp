@@ -5,11 +5,16 @@
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Roboto", sans-serif;
+  overflow: hidden;
+}
+
+li {
+  list-style: none;
 }
 
 .bg-green {
-  height: 10vh;
+  height: 150px;
   width: 100vw;
   background: #0c928d;
 }
@@ -23,7 +28,7 @@ body {
 .app-window {
   display: flex;
   position: absolute;
-  top: 50%;
+  top: 445px;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 1425px;
@@ -155,6 +160,7 @@ body {
   width: 100%;
   position: relative;
   border-bottom: 1px solid #eaeaea;
+  cursor: pointer;
 }
 
 .app-contact-img {
@@ -210,16 +216,79 @@ body {
 .app-im {
   height: 590px;
   display: flex;
+  overflow-y: auto;
 }
 
-.app-im-received {
+.app-im-messages {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.app-im-message {
   background: white;
-  flex: 1;
+  height: fit-content;
+  width: fit-content;
+  padding: 25px 15px 30px 15px;
+  border-radius: 10px;
+  position: relative;
+  overflow-wrap: break-word;
+  font-size: 1.2rem;
+  margin-top: 15px;
+  min-width: 120px;
 }
 
-.app-im-sent {
-  background: teal;
-  flex: 1;
+.app-im-message:hover .toggle {
+  display: block;
+}
+
+.received {
+  background: white;
+  margin-left: 80px;
+}
+
+.sent {
+  background: #d5f9ba;
+  align-self: flex-end;
+  margin-right: 80px;
+}
+
+.app-im-date {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  font-size: 11px;
+  color: #b1b1b1;
+}
+
+.toggle {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  color: #b1b1b1;
+  display: none;
+  cursor: pointer;
+}
+
+.menu {
+  position: absolute;
+  top: 22px;
+  right: 10px;
+  background: white;
+  width: 180px;
+  height: 80px;
+  z-index: 1;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 30px;
+  line-height: 2rem;
+  border-radius: 3px;
+  font-size: 1rem;
+  -webkit-box-shadow: 0px 10px 38px -23px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 10px 38px -23px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 10px 38px -23px rgba(0, 0, 0, 0.75);
 }
 
 .app-message {

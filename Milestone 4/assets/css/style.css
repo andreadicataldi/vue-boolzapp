@@ -6,6 +6,7 @@
 
 body {
   font-family: "Roboto", sans-serif;
+  overflow: hidden;
 }
 
 li {
@@ -13,7 +14,7 @@ li {
 }
 
 .bg-green {
-  height: 10vh;
+  height: 150px;
   width: 100vw;
   background: #0c928d;
 }
@@ -27,7 +28,7 @@ li {
 .app-window {
   display: flex;
   position: absolute;
-  top: 50%;
+  top: 445px;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 1425px;
